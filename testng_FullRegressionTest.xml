@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<groups>
+		<run>
+			<include name="smoke Test"/>
+			<include name="regression Test"/>
+		</run>
+	</groups>
+	<listeners>
+	<listener class-name="com.crm.GenericUtility_Test.ListImp"/>
+</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.crm.comcast.contactsTest.CreateContactsTest"/>
+      <class name="com.crm.vtiger.organizationTest.CreateOrganizationtest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

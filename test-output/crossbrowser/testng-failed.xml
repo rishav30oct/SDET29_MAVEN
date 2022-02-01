@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [crossbrowser]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="TestRunner-2(failed)">
+    <parameter name="BROWSER" value="firefox"/>
+    <classes>
+      <class name="com.crm.comcast.contactsTest.CreateContactsTest">
+        <methods>
+          <include name="configBM"/>
+          <include name="createContactsWithOrg"/>
+          <include name="configAM"/>
+          <include name="configBS"/>
+          <include name="configBC"/>
+          <include name="createContacts"/>
+          <include name="configAS"/>
+          <include name="configAC"/>
+        </methods>
+      </class> <!-- com.crm.comcast.contactsTest.CreateContactsTest -->
+      <class name="com.crm.vtiger.organizationTest.CreateOrganizationtest">
+        <methods>
+          <include name="configBM"/>
+          <include name="createOrgWithIndType"/>
+          <include name="createOrganization"/>
+          <include name="configAM"/>
+          <include name="configBS"/>
+          <include name="configBC"/>
+          <include name="configAS"/>
+          <include name="configAC"/>
+        </methods>
+      </class> <!-- com.crm.vtiger.organizationTest.CreateOrganizationtest -->
+    </classes>
+  </test> <!-- TestRunner-2(failed) -->
+  <test thread-count="2" parallel="tests" name="TestRunner-1(failed)">
+    <parameter name="BROWSER" value="chrome"/>
+    <classes>
+      <class name="com.crm.vtiger.organizationTest.CreateOrganizationtest">
+        <methods>
+          <include name="configBM"/>
+          <include name="createOrgWithIndType"/>
+          <include name="createOrganization"/>
+          <include name="configAM"/>
+          <include name="configBS"/>
+          <include name="configBC"/>
+          <include name="configAS"/>
+          <include name="configAC"/>
+        </methods>
+      </class> <!-- com.crm.vtiger.organizationTest.CreateOrganizationtest -->
+    </classes>
+  </test> <!-- TestRunner-1(failed) -->
+</suite> <!-- Failed suite [crossbrowser] -->
