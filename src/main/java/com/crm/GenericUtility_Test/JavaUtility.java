@@ -13,7 +13,7 @@ public class JavaUtility {
 	public int createRandomNo()
 	{
 		Random random=new Random();
-		int ran = random.nextInt(100);
+		int ran = random.nextInt(1000);
 		
 		return ran;
 	}
