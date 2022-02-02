@@ -197,7 +197,7 @@ public class WebDriverUtility {
 
 	    public void takeScreenshot(WebDriver driver, String screenshotName) throws Throwable {
 	    	TakesScreenshot ts=(TakesScreenshot) driver;
-	    	File src = ts.getScreenshotAs((OutputType) driver);
+	    	File src = ts.getScreenshotAs(OutputType.FILE);
 	    	File dest=new File("./screenshot/"+screenshotName+".png");
 			Files.copy(src,dest);
 	    	
