@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -23,13 +24,13 @@ import com.vtiger.comcast.pomrepositlib.Organizations;
 
 public class CreateContactsTest extends BaseAnnotationClass{
 	
-	@Test(groups="smoke Test")
-	public  void createContacts() throws Throwable {
+	@Test(groups="smoke Test",dataProvider="conTestProvider")
+	public  void createContacts(String conName) throws Throwable {
 	
 		int randomint = jlib.createRandomNo();
 	
 		/*read test data*/	
-		String conName=elib.getDataFromExcel("org",5,3)+randomint;
+		//String conName=elib.getDataFromExcel("org",5,3)+randomint;
 		
 		/*navigate to contacts*/
 		Home hp=new Home(driver);
@@ -48,6 +49,18 @@ public class CreateContactsTest extends BaseAnnotationClass{
 		String actLastName=ci.getOrgHeaderSucMsg().getText();
 		Assert.assertTrue(actLastName.contains(conName));
 		
+	}
+	
+	@DataProvider
+	public Object[][] conTestProvider() throws Throwable
+	{
+		Object[][] objarr =new Object[4][1];
+		for(int i=0;i<4;i++)
+		{
+			objarr[i][0]=elib.getDataFromExcel("con", i+1, 2)+jlib.createRandomNo();
+			
+		}
+		return objarr;
 	}
 		
 		@Test(groups= "regression Test")
