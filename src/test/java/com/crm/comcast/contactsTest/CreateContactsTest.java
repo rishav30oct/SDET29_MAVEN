@@ -57,7 +57,7 @@ public class CreateContactsTest extends BaseAnnotationClass{
 		Object[][] objarr =new Object[4][1];
 		for(int i=0;i<4;i++)
 		{
-			objarr[i][0]=elib.getDataFromExcel("con", i+1, 2)+jlib.createRandomNo();
+			objarr[i][0]=elib.getDataFromExcel("con", i+1, 3)+jlib.createRandomNo();
 			
 		}
 		return objarr;
